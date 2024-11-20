@@ -1,10 +1,15 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the background color of the page */
+body {
+  background-color: white; /* Makes the page background white */
+}
+
 /* Header Styling */
 .header {
   position: fixed;
@@ -19,4 +24,11 @@
   padding: 0 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+}
+
+/* Styling the <p> inside the header */
+.header p {
+  font-size: 2rem; /* Adjust to your preferred size */
+  color: #fff; /* Add color if needed */
+  font-weight: bold;
 }
