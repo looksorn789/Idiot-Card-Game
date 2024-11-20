@@ -1,3 +1,187 @@
-.center{
-    
-}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    background-color: #f0f2f5; /* Softer background */
+  }
+  
+  /* Landing page container */
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 70px); /* Full height minus the header */
+    margin: 0;
+    background-color: #ffffff;
+  }
+  
+  /* Center box styling */
+  .center-box {
+    width: 90%; /* Take up 90% of the screen width */
+    max-width: 800px; /* Cap width for larger screens */
+    height: 80%; /* Take up 80% of the screen height */
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Enable positioning of child elements */
+    overflow: hidden; /* Prevent overflowing content */
+    padding: 0;
+  }
+  
+  /* Scrollable content for mobile */
+  .center-box:after {
+    content: ""; /* Ensure scrolling works on mobile */
+    height: 1px;
+    opacity: 0;
+  }
+  
+  /* Tab header styling */
+  .tab-header {
+    position: absolute; /* Position tabs at the top of the box */
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretch tabs across the width of the box */
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ffffff; /* Ensure tabs have the same background as the box */
+    border-top-left-radius: 15px; /* Match the border radius of the box */
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid #ddd; /* Divider line between tabs and content */
+    padding: 10px 0;
+    z-index: 1; /* Ensure tabs stay on top of other elements */
+  }
+  
+  .tab-button {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555; /* Softer text color for inactive tabs */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s, border-bottom 0.2s;
+  }
+  
+  .tab-button.active {
+    color: #e63946; /* Highlight active tab with a vibrant red */
+    font-weight: bold;
+    border-bottom: 3px solid #e63946; /* Accent border for the active tab */
+  }
+  
+  /* Content styling */
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center inputs vertically */
+    gap: 20px; /* Space between inputs and button */
+    height: 100%; /* Take up the remaining space */
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  
+  /* Input styling */
+  input {
+    width: 90%; /* Inputs span most of the box width */
+    max-width: 500px;
+    padding: 15px; /* Adjust padding for larger inputs */
+    font-size: 1.1rem; /* Slightly bigger font size */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Subtle gray background for inputs */
+    color: #333;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+  
+  input::placeholder {
+    color: #aaa; /* Softer placeholder text color */
+  }
+  
+  input:focus {
+    background-color: #ffffff;
+    border-color: #e63946; /* Match input focus with the active tab color */
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 57, 70, 0.4); /* Add subtle focus glow */
+  }
+  
+  /* Button styling */
+button {
+    width: 70%; /* Buttons span slightly less than inputs */
+    max-width: 400px; /* Cap button width for larger screens */
+    padding: 15px; /* Slightly larger padding for the button */
+    font-size: 1.1rem; /* Bigger font size for button text */
+    font-weight: bold;
+    background-color: #e63946; /* Vibrant red for buttons */
+    color: #fff; /* White text for better contrast */
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+  }
+
+  .start-join-button {
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #d62839; /* Slightly darker red on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(230, 57, 70, 0.4); /* Subtle focus glow */
+  }  
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .center-box {
+      width: 95%; /* Increase width for smaller screens */
+      height: 90%; /* Allow more height on smaller screens */
+    }
+  
+    input {
+      width: 95%; /* Inputs span more width on smaller screens */
+      font-size: 1rem; /* Reduce font size for smaller screens */
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    button {
+      width: 80%; /* Buttons take up more width */
+      font-size: 1rem;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    input {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  
+    .center-box {
+      height: 95%; /* Allow scrolling on very small screens */
+      overflow-y: auto; /* Enable scrolling for content */
+    }
+  }
+  

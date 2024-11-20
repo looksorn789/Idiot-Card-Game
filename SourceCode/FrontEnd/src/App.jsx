@@ -1,17 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Lobby from "./pages/Lobby";
+import LandingPage from "./pages/LandingPage";
 
-function App() {
-
-
+const App = () => {
   return (
-    <BrowserRouter>
     <Routes>
-        <Route path= "/" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/lobby" element={<Lobby />} />
     </Routes>
-    </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

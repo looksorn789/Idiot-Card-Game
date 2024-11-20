@@ -1,0 +1,287 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #000; /* Set all text to black by default */
+  }
+  
+  .lobby-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7979a1;
+    padding: 15px 20px;
+    height: 70px;
+    color: #fff;
+  }
+  
+  .header p {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Main Lobby Content */
+  .lobby-main {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 70px;
+    border-top: 2px solid #ddd;
+    overflow-y: auto;
+  }
+  
+  /* Players Section */
+  .players-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .players-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000; /* Ensure player names are black */
+  }
+  
+  .player-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    color: #000; /* Default icon color to black */
+  }
+  
+  .crown {
+    color: gold; /* Highlight crown icon */
+  }
+  
+  .eye {
+    color: #76b5c5; /* Highlight eye icon */
+  }
+  
+  .cog {
+    color: #8c8c8c; /* Highlight cog icon */
+  }
+  
+  .ready-text {
+    font-size: 1.1rem;
+    color: #000; /* Set ready text to black */
+  }
+  
+  /* Spectators Section */
+  .spectators-section {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .spectators-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000; /* Ensure spectators title is black */
+  }
+  
+  .spectators-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .spectator {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    color: #000; /* Ensure spectators' names are black */
+  }
+  
+  /* Controls Section */
+  .controls-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .host-info {
+    text-align: center;
+  }
+  
+  .host-name {
+    margin-top: 5px;
+    font-size: 1.5rem; /* Increased host text size */
+    font-weight: bold;
+    color: #000; /* Ensure host text is black */
+  }
+  
+  .timer-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .timer-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .timer-buttons button {
+    padding: 10px;
+    font-size: 1.5rem; /* Larger font size for better visibility */
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove default button styles */
+    cursor: pointer;
+    color: black; /* Set arrows to black */
+  }
+  
+  .timer-buttons button:hover {
+    color: #555; /* Slight color change on hover */
+  }
+  
+  .timer-display {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold; /* Make the text bold */
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    color: black; /* Set text to black */
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* How to Play Button */
+  .how-to-play {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000; /* Set how-to-play button text to black */
+  }
+  
+  /* Lobby Buttons */
+  .lobby-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .start-button {
+    background-color: #4caf50;
+    border: none;
+    padding: 12px 25px;
+    color: #fff; /* Keep start button text white */
+    font-weight: bold;
+  }
+  
+  .start-button:hover {
+    background-color: #45a049;
+  }
+  
+  .leave-button {
+    background-color: #e63946;
+    border: none;
+    padding: 12px 25px;
+    color: #fff; /* Keep leave button text white */
+    font-weight: bold;
+  }
+  
+  .leave-button:hover {
+    background-color: #d62839;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .lobby-main {
+      flex-direction: column; /* Stack sections vertically */
+    }
+  
+    .controls-section {
+      order: 1; /* Host controls at the top */
+      width: 100%; /* Full width */
+      margin-bottom: 20px; /* Add spacing below */
+    }
+  
+    .players-section {
+      order: 2; /* Player list in the middle */
+      width: 100%; /* Full width */
+      margin-bottom: 20px; /* Add spacing below */
+    }
+  
+    .spectators-section {
+      order: 3; /* Spectators at the bottom */
+      width: 100%; /* Full width */
+    }
+  
+    .players-list {
+      gap: 15px; /* Increase gap between players for better mobile spacing */
+    }
+  
+    .player {
+      flex-direction: column; /* Stack player elements vertically for better fit */
+      align-items: flex-start; /* Align items to the left */
+      gap: 10px; /* Add spacing between elements */
+    }
+  
+    .player-icons {
+      gap: 15px; /* Increase gap between icons */
+    }
+  
+    .timer-control {
+      flex-direction: column; /* Stack timer text and controls vertically */
+      gap: 5px;
+    }
+  }
+  
+  

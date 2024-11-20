@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant u as User
+    participant ui as Front End (UI)
+    participant rm as Room Manager
+    participant gm as Game Manager
+    participant pm as Player Manager
+    participant dm as Deck Manager
+
+    u->>ui: User clicks 'create room' button
+    ui->>rm: Front end sends message to back end to<br>start the game
+    rm->>gm: Connection Manager calls upon<br>Game Manager to create new game state
+    gm->>dm: Game Manager calls upon<br>Deck Manager to create a new, random deck of cards
+    dm->>dm: Deck Manager generates a new deck of cards
+    dm->>dm: Deck Manager randomizes the deck of cards
+    dm->>gm: Deck Manager returns randomly generated deck<br>of cards to Game Manager
+    gm->>dm: Game Manager tells<br>Deck Manager to deal cards to players
+    dm->>pm: Deck Manager deals cards to players
+    pm->>dm: Player reports hand size to deck manager
+    gm->>rm: Game Manager returns that the<br>game is ready to start
+    rm->>pm: Room tells players that<br>the game is starting

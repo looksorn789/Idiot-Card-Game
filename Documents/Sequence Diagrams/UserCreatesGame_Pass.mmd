@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant u as User
+    participant ui as Front End (UI)
+    participant rm as Room Manager
+    participant pm as Player Manager
+    participant gm as Game Manager
+    participant dm as Deck Manager
+
+    u->>ui: User clicks 'create room' button
+    ui->>rm: Front end sends message to back end to<br>create new room
+    rm->>rm: Create a new object that stores players and spectators
+    
+    rm-->>pm: Await player connections
+    

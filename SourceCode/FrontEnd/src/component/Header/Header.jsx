@@ -1,11 +1,18 @@
 import React from "react";
 import "./Header.css";
 
-const Header = () => {
-
+const Header = ({ title, roomCode, onLeave }) => {
   return (
     <header className="header">
-        <p>Test</p>
+      <p className="header-title">{title}</p>
+      {roomCode && (
+        <div className="room-info">
+          <span>Room Code: {roomCode}</span>
+          <button className="leave-button" onClick={onLeave}>
+            Leave
+          </button>
+        </div>
+      )}
     </header>
   );
 };
