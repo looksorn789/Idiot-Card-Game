@@ -130,6 +130,17 @@
     font-size: 1.1rem;
     color: #000;
   }
+
+  .spectator-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000; /* Ensure player names are black */
+  }
+  
+  .spectator-icons {
+    display: flex;
+    gap: 10px;
+  }
   
   /* Controls Section */
   .controls-section {

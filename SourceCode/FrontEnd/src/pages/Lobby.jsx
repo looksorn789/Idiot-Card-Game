@@ -1,15 +1,27 @@
 import React from "react";
-import { FaCrown, FaEye, FaCog } from "react-icons/fa"; // Import icons from react-icons
+import { FaCrown, FaEye, FaCog } from "react-icons/fa";
 import Header from "../component/Header/Header";
 import { useNavigate } from "react-router-dom";
 import "../component/styles/Lobby.css";
+import dummyPlayerData from "./LobbyData";
+import ShareModal from "./HowToPlay";
 
-const Lobby = () => {
-    const navigate = useNavigate(); // Initialize the navigate function
+const Lobby = () => { 
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+    const navigate = useNavigate();
     
     const handleLeave = () => {
         console.log("Leave button clicked");
         navigate("/")
+    };
+
+    const handleShareClick = (e) => {
+      e.stopPropagation();
+      setIsShareModalOpen(true);
+    };
+  
+    const closeShareModal = () => {
+      setIsShareModalOpen(false);
     };
 
   return (
@@ -22,56 +34,33 @@ const Lobby = () => {
       <div className="lobby-main">
         <div className="players-section">
           <div className="players-list">
-            {/*Player 1*/}
-            <div className="player">
-              <span className="player-name">Rainier</span>
-              <div className="player-icons">
-                <FaCrown className="icon crown" />
-                <FaEye className="icon eye" />
-                <FaCog className="icon cog" />
-              </div>
-              <span className="ready-text">Ready?</span>
+            {dummyPlayerData.players.map((player, index) => ( //parsing in dummy data until backend is finshed
+                <div key={index} className="player">
+                  <span className="player-name">{player.name}</span>
+                  <div className="player-icons">
+                    {player.icons.crown && <FaCrown className="icon crown" />}
+                    {player.icons.eye && <FaEye className="icon eye" />}
+                    {player.icons.cog && <FaCog className="icon cog" />}
+                  </div>
+                  <span className="ready-text">{player.isReady ? "Ready" : "Not Ready"}</span>
+                </div>
+              ))}
             </div>
-            {/*Player 2*/}
-            <div className="player">
-              <span className="player-name">Pat</span>
-              <div className="player-icons">
-                <FaCrown className="icon crown" />
-                <FaEye className="icon eye" />
-                <FaCog className="icon cog" />
+            <div className="spectators-section">
+              <h3 className="spectators-title">Spectators</h3>
+              <div className="spectators-list">
+                {dummyPlayerData.spectators.map((spectator, index) => (
+                  <div key={index} className="spectator">
+                    <span className="spectator-name">{spectator.name}</span>
+                    <div className="spectator-icons">
+                      {spectator.icons.eye && <FaEye className="icon eye" />}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <span className="ready-text">Ready?</span>
-            </div>
-            {/*Player 3*/}
-            <div className="player">
-              <span className="player-name">Shay</span>
-              <div className="player-icons">
-                <FaCrown className="icon crown" />
-                <FaEye className="icon eye" />
-                <FaCog className="icon cog" />
-              </div>
-              <span className="ready-text">Ready?</span>
-            </div>
-            {/*Player 4*/}
-            <div className="player">
-              <span className="player-name">Brandon</span>
-              <div className="player-icons">
-                <FaCrown className="icon crown" />
-                <FaEye className="icon eye" />
-                <FaCog className="icon cog" />
-              </div>
-              <span className="ready-text">Ready?</span>
             </div>
           </div>
-          <div className="spectators-section">
-            <h3 className="spectators-title">Spectators</h3>
-            <div className="spectators-list">
-              <div className="spectator">Joe</div>
-              <div className="spectator">Matt</div>
-              <div className="spectator">Vincent</div>
-            </div>
-          </div>
-        </div>
+
         <div className="controls-section">
           <div className="host-info">
             <span>Host</span>
